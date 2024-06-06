@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var v=prompt("Informe ate qual numero voce quer contar: ");
+        var sep = ""
+        for (i=0; i<v; i++){
+            if (i==v-2){
+                sep=".";
+            }else {
+                sep=", ";
+            }
+            if (i%2==0){
+                document.write(i+2+sep);
+            }
+        }
+    </script>
+</body>
+</html>

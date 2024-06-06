@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nomes = new Array(4);
+        for (var i=0; i< nomes.length; i++){
+            nomes[i]=prompt("Digite o "+(i+1)+" nome: ");
+        }
+        document.write("Lista de nomes:</BR>");
+        for (var i=0; i< nomes.length; i++){
+            document.write((i+1)+"- "+nomes[i]+"</BR>");
+        }
+    </script>
+</body>
+</html>

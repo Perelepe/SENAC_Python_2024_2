@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var time1, time2, gols1, gols2, resultado;
+        
+        time1=prompt("Nome do Primeiro time: ");
+        time2=prompt("Nome do Segundo time:");  
+        gols1=prompt("Gols do " + time1 + ":");
+        gols2=prompt("Gols do " + time2 + ":");
+        
+        document.write(time1 + " " + gols1 + "x" + gols2 + " " + time2);
+
+        gols1=parseInt(gols1);
+        gols2=parseInt(gols2);
+        
+        if (gols1>gols2){
+            resultado="Vitória do " + time1;
+        }
+        if (gols2>gols1){
+            resultado="Vitória do " + time2;
+        }
+        if (gols1==gols2){
+            resultado="Empate";
+        }
+        
+        document.write("</BR>" + "Resultado do jogo: " + resultado + "!");
+    </script>
+</body>
+</html>
