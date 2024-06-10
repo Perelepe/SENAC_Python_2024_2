@@ -11,7 +11,9 @@
         var alerta="O valor inserido deve ser um numero";
 
         
-        nome=prompt("Insira o Nome do Aluno: ");
+        while (!(nome=prompt("Insira o Nome do Aluno: "))){
+            alert("Insira um nome.");
+        };
         while(Number.isNaN(nota1=parseFloat(prompt("Primeira nota:")))){
             alert(alerta);
         }

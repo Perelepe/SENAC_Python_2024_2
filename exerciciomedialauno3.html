@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome, nota1, nota2, media, situacao, quantidade;
+
+        function isNum(a){
+            return Number.isNaN(a);
+        }
+        function pedeNome(a){
+            var nome;
+            while (!(nome=prompt("Insira o Nome do Aluno " + a + ": "))){
+                alert("Insira um nome.");
+            }
+            return nome;
+        }
+        function pedeNota(a){
+            var nota;
+            do{    
+                nota=parseFloat(prompt("Nota " + a + ":"));  
+                if(isNum(nota)){
+                    alert("O valor inserido deve ser um numero");
+                } 
+            } while(isNum(nota));
+            return nota;
+        }
+
+        function passou(media){
+            if (media>=6.5){
+            return 'Aprovado';
+            } else {
+            return 'Reprovado';
+            }
+        }
+        
+        quantidade = parseInt(prompt("Insira o numero de alunos"));
+        for (var i=0; i<quantidade; i++){
+            nome=pedeNome((i+1));
+            nota1=pedeNota(1);
+            nota2=pedeNota(2);
+        
+            media = (nota1+nota2)/2;
+            situacao = passou(media);
+
+            
+            document.write("Aluno "+ (i+1) + ": " + nome + "</BR>" + "Media: " + media + "</BR>" + situacao + "</BR></BR>");
+        }
+    </script>
+</body>
+</html>
