@@ -15,18 +15,24 @@
     <h5>Título 5</h5>
     <h6>Título 6</h6>
     <p>Um parágrafo</p>
-    <p>Um outro &nbsp; parágrafo com três espaços pq eu usei o &_nbsp;(sem o _)</p>
-    <p>Texto em<b> Negrito</b></p>
-    <p>Texto em<i> Itálico</i></p>
-    <p>Texto em<mark> Destaque</mark></p>
-    <p>Texto<small> Pequititito</small></p>
-    <p>Texto<del> Hachurado</del></p>
-    <p>Texto<ins> Sublinhado</ins></p>
-    <p>Texto<sub> Subescrito</sub></p>
-    <p>Texto<sup> Sobrescrito</sup></p>
-    <a href="http://globo.com">Hipertexto!</a>
+    <p>Um outro &nbsp; parágrafo com três espaços pq eu usei o &amp;nbsp;</p>
+    <fieldset>
+        <legend>Tipos de Texto</legend>
+        <ul>
+            <li><b>Negrito</b></li>
+            <li><i>Itálico</i></li>
+            <li><mark>Destaque</mark></li>
+            <li><small> Pequititito</small></li>
+            <li><del>Hachurado</del></li>
+            <li><ins>Sublinhado</ins></li>
+            <li><sup>Sobrescrito</sup></li>
+            <li><sub>Subescrito</sub></li>    
+            <li><a href="#">Hipertexto!</a><br></li>
+            <li>Símbolos: &copy;&reg;&euro;&amp;&lt;&nbsp;&gt;</li>
+        </ul>
+    </fieldset>
     <!--width="10%" usa 10% da tela e width="40px" usa um valor fixo de 40px-->
-    <TABLE border="10" width="10%" align="center">
+    <TABLE border="10" width="10%" align="right">
         <caption>Boletim</caption>
         <TR>
             <TH align="center">Nome</TH>
@@ -43,6 +49,55 @@
             <TD align="center">8</TD>
         </TR>
     </TABLE>
+    <!-- Tipos de input
+    <input type="text" name="nome em cima da caixa" maxlength="numero maximo de caracteres" size="tamanho da caixa" placeholder="da um exemplo" >
+    <input type="text" value="Valor Padrão" disabled> -> disabled desabilita a caixa, ela aparece, mas sem possibilidade de edição.
+    <input type="radio">
+    <input type="submit">
+    -->
+    <form action="confirma.html" method="post">
+        <fieldset align="center">
+        <legend>Dados Pessoais</legend>
+        Nome:<br>
+        <input type="text" name="nome" placeholder="Nome" required><br>
+        Sobrenome:<br>
+        <input type="text" name="sobrenome" value="Silva" disabled><br>
+        Senha:<br>
+        <input type="password" name="senha" required><br>
+        <input type="submit" value="confirmar">
+        </fieldset>
+    </form>
+    <!--
+    <form>
+        <fieldset align="left">
+        <input type="radio" name="sexo" value="Masculino" > Masculino<br>
+        <input type="radio" name="sexo" value="Feminino" > Feminino<br>
+        <input type="radio" name="sexo" value="Outro" checked> Outro<br>
+        </fieldset>
+    </form>
+    <form>
+        <select name="carros">
+            <option value="fiesta">Fiesta</option>
+            <option value="polo" selected>Polo</option>
+            <option value="kicks">Kicks</option>
+            <option value="hb20">HB20</option>
+        </select>
+    </form>
+    
+    <form action="confirma.html">
+        <select name="carros" multiple>
+            <option value="fiesta">Fiesta</option>
+            <option value="polo" selected>Polo</option>
+            <option value="kicks">Kicks</option>
+            <option value="hb20">HB20</option>
+            <option value="filler">Mais uma opção só pra mostrar a barrinha</option>
+        </select>
+        <input type="submit" value="Enviar">
+    </form>
+-->
+    <textarea rows="10" cols="40" placeholder="Digite aqui..."></textarea>
+    
+    <hr>
     <img src="images/foto.jpg" alt="foto" width="100" height="100">
 </body>
 
