@@ -5,17 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nome da Página</title>
+    <link rel="stylesheet" type="text/css" href="..\..\..\CSS\exemplos_estilo.css">
 </head>
-
-<body>
-    <h1>Título 1</h1>
-    <h2>Título 2</h2>
-    <h3>Título 3</h3>
-    <h4>Título 4</h4>
-    <h5>Título 5</h5>
-    <h6>Título 6</h6>
-    <p>Um parágrafo</p>
-    <p>Um outro &nbsp; parágrafo com três espaços pq eu usei o &amp;nbsp;</p>
+<!--Use o nome diretamente para se referir aos elementos, #nome para se referir a um id e .nome para classes
+    O nome aplica a todos os elementos desse tipo, o ID é único e a classe é generica para todos dessa classe
+    e um elemento pode ter mais de uma classe no formato class="classe1 classe2 classe3"-->
+<body style="background-color: azure;">
+    <fieldset>
+        <legend>Títulos</legend>
+        <h1 style="color:#8119AC;font-size: 36px; margin-top:20px;">Título 1</h1>
+        <h2>Título 2</h2>
+        <h3>Título 3</h3>
+        <h4>Título 4</h4>
+        <h5>Título 5</h5>
+        <h6>Título 6</h6>
+    </fieldset>
+    <fieldset>
+        <legend>Parágrafos</legend>
+        <p>Um parágrafo</p>
+        <p>Um outro &nbsp; parágrafo com três espaços pq eu usei o &amp;nbsp;</p>
+    </fieldset>
     <fieldset>
         <legend>Tipos de Texto</legend>
         <ul>
@@ -57,48 +66,76 @@
     -->
     <form action="confirma.html" method="post">
         <fieldset align="center">
-            <legend>Dados Pessoais</legend>
-            Nome:<br>
-            <input type="text" name="nome" placeholder="Nome" required><br>
-            Sobrenome:<br>
-            <input type="text" name="sobrenome" value="Silva" disabled><br>
-            Senha:<br>
-            <input type="password" name="senha" required><br>
-            <input type="submit" value="Submit">
+        <legend>Dados Pessoais</legend>
+        Nome:<br>
+        <input type="text" name="nome" placeholder="Nome" required><br>
+        Sobrenome:<br>
+        <input type="text" name="sobrenome" value="Silva" disabled><br>
+        Senha:<br>
+        <input type="password" name="senha" required><br>
+        <input type="submit" value="Confirmar">
+        <input type="reset" value="Limpar">
         </fieldset>
     </form>
-
-    <form>
-        <fieldset align="left">
-        <input type="radio" name="sexo" value="Masculino" > Masculino<br>
-        <input type="radio" name="sexo" value="Feminino" > Feminino<br>
-        <input type="radio" name="sexo" value="Outro" checked> Outro<br>
-        </fieldset>
-    </form>
-    <form>
-        <select name="carros">
-            <option value="fiesta">Fiesta</option>
-            <option value="polo" selected>Polo</option>
-            <option value="kicks">Kicks</option>
-            <option value="hb20">HB20</option>
-        </select>
-    </form>
+    <fieldset align="left">
+        <legend>Seletores</legend>
+        <form>
+            <input type="radio" name="sexo" value="Masculino" > Masculino<br>
+            <input type="radio" name="sexo" value="Feminino" > Feminino<br>
+            <input type="radio" name="sexo" value="Outro" checked> Outro<br>
+        </form>
+        <form>
+            <select name="carros">
+                <option value="fiesta">Fiesta</option>
+                <option value="polo" selected>Polo</option>
+                <option value="kicks">Kicks</option>
+                <option value="hb20">HB20</option>
+            </select>
+        </form>
+        
+        <form action="confirma.html">
+            <select name="carros" multiple>
+                <option value="fiesta">Fiesta</option>
+                <option value="polo" selected>Polo</option>
+                <option value="kicks">Kicks</option>
+                <option value="hb20">HB20</option>
+                <option value="filler">Mais uma opção só pra mostrar a barrinha</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
+    </fieldset>
     
-    <form action="confirma.html">
-        <select name="carros" multiple>
-            <option value="fiesta">Fiesta</option>
-            <option value="polo" selected>Polo</option>
-            <option value="kicks">Kicks</option>
-            <option value="hb20">HB20</option>
-            <option value="filler">Mais uma opção só pra mostrar a barrinha</option>
-        </select>
-        <input type="submit" value="Enviar">
-    </form>
+    <div>
+        <button id="botaoAqui" onclick="alerta();">Clique Aqui!</button>
+        <button id="botaoNaoAqui" onclick="escreve();">Não clique aqui, por favor!</button>
+    </div>
 
-    <textarea rows="10" cols="40" placeholder="Digite aqui..."></textarea>
-    
+    <textarea rows="10" cols="40" placeholder="Digite aqui..." ></textarea>
+    <hr>
+    <textarea id="caixaIrritante" name="caixaIrritante" onkeydown="irritante(event);"></textarea>
+    <fieldset>
+        <legend>Parágrafos em DIV</legend>
+        <div id="paragrafo" name="paragrafo" class="exemplo">
+            <p>Primeiro parágrafo</p>
+        </div>
+        <div name="paragrafo" class="exemplo">
+            <p>Segundo parágrafo</p>
+        </div>
+    </fieldset>
     <hr>
     <img src="images/foto.jpg" alt="foto" width="100" height="100">
 </body>
+
+<script>
+    function alerta(){
+        alert("Haha, clicou, que otário");
+    }
+    function escreve(){
+        document.write("<h1>pqq tu clicou vei, apagou tudo agora</h1>");
+    }
+    function irritante(event){
+        alert("Parabéns, você sabe pressionar a tecla "+ event.key+".");
+    }
+</script>
 
 </html>
