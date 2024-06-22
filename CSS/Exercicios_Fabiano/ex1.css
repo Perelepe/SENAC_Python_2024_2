@@ -1,0 +1,40 @@
+#titulo{
+    text-align: center;
+    background-color: green;
+    height: 40px;
+}
+#conteudo{
+    background-color: yellow;
+    height:800px;
+}
+#rodape{
+    background-color: lightblue;
+    height: 40px;
+}
+td{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid;
+    font-size: 14px;
+    font-family: Arial black, sans-serif;
+    background-color: grey;
+}
+th{
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+}
+table{
+    border-collapse: collapse;
+    margin: 30px auto;
+}
+#cinza{
+    
+}
+#cinza_claro{
+    background-color: lightgray;
+}
+#branco{
+    background-color: white;
+}
