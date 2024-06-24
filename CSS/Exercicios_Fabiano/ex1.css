@@ -1,14 +1,11 @@
 #titulo{
     text-align: center;
-    background-color: green;
     height: 40px;
 }
 #conteudo{
-    background-color: yellow;
     height:800px;
 }
 #rodape{
-    background-color: lightblue;
     height: 40px;
 }
 td{
