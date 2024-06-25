@@ -2,18 +2,20 @@ p{
     color:#8119AC;
     font-size: 20px;
     text-align: center;
+    border-style: dotted;
 }
 h1, h2, h3, h4, h5, h6 {
     color:#8119AC;
     margin-top:20px;
+    border-style: dashed;
 }
 
 #paragrafo{
     color:#ddbd06;
     background-color: aliceblue;
+    border-style: groove;
 }
 .exemplo{
     margin-left:15%;
     margin-right:15%;
-    
 }

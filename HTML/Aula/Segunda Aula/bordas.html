@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Borda</title>
+    <style>
+        p.one{
+            border-style: dotted;
+            border-width: 2px;
+        }
+        p.solid{
+            border-style: solid;
+        }
+        p.mix{
+            border-style: dotted dashed solid double;
+        }
+        p.alt{
+            border-top-width: 3px;
+            border-top-style: dotted;
+            border-top-color: blue;
+            border-bottom-width: 5px;
+            border-bottom-style: dashed;
+            border-bottom-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="titulo">
+        <h2>Propriedade Border-Style</h2>
+    </div>
+    <div id="conteudo">
+        <p class="one">Borda do tipo Dotted</p>
+        <p class="solid">Borda do tipo Solid</p>
+        <p class="mix">Bordas Misturadas</p>
+        <p class="alt">Bordas só em alguns lados</p>
+    </div>
+    <div id="rodape">
+
+    </div>
+</body>
+</html>
