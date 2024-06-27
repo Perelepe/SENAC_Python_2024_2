@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de Tabela</title>
+    <style>
+        section{
+            display: flex;
+            justify-content: center;
+        }
+        .tabela{
+            border-collapse: collapse;
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .tabela .corpo{
+            text-align: left;
+            height: 40px;
+            
+
+        }
+        .tabela .titulo{
+            text-align: left;
+            background-color: #4CAF50;
+            height: 40px;
+            margin-left: 20%;
+            color: white;
+    
+            
+        }
+        .corpo:hover{
+            background-color: lightgrey;
+        }
+        .impar{
+            background-color: whitesmoke;
+        }
+        .par{
+            background-color: white;
+        }
+        td, th{
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <table class="tabela">
+            <tr class="titulo">
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+            </tr>
+            <tr class="corpo impar">
+                <td>João</td>
+                <td>25</td>
+                <td>Rio de Janeiro</td>
+            </tr>
+            <tr class="corpo par">
+                <TD>Natanael</TD>
+                <TD>30</TD>
+                <TD>São Paulo</TD>
+            </tr>
+            <tr class="corpo impar">
+                <td>Fabiano</td>
+                <td>50</td>
+                <td>Niterói</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

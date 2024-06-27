@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button</title>
+    <title>Botão desabilitado</title>
     <style>
         .button{
-            background-color: white;
+            background-color: #4CAF50;
             border: 2px solid #4CAF50;;
             border-radius: 3px;
             color: white;
             padding: 15px 32px;
             text-align: center;
-            text-decoration: none; /*muda detalhes visuais no texto*/
+            text-decoration: none;
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
-            cursor: pointer; /*altera o mouse quando passa o mouse*/
+            cursor: pointer;
             transition-duration: 0.4s;
         }
-        .button1{border: none}
-        .button1:hover{
+        .button:hover{
             background-color: #4CAF50;
             color: white;
         }
-        .button1:active{
+        .button:active{
             background-color: red;
             color: blue;
+        }
+        .disabled{
+            opacity: 60%;
+            cursor:not-allowed;
+        }
+        .disabled:active{
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <button class="button">Botão padrão</button>
-    <button class="button button1">Botão modificado</button>
-    
+    <h2>Botões desabilitados</h2>
+    <button class="button">Botão Normal</button>
+    <button class="button disabled">Botão Desabilitado</button>
 </body>
 </html>
