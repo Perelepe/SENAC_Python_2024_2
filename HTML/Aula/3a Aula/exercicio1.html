@@ -9,39 +9,37 @@
             display: flex;
             justify-content: center;
         }
+
         .tabela{
             border-collapse: collapse;
             width: 100%;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         }
 
         .tabela .corpo{
             text-align: left;
             height: 40px;
-            
-
         }
+
         .tabela .titulo{
             text-align: left;
             background-color: #4CAF50;
             height: 40px;
             margin-left: 20%;
             color: white;
-    
-            
         }
-        .corpo:hover{
-            background-color: lightgrey;
-        }
-        .impar{
+
+        .tabela tr:nth-child(even){
             background-color: whitesmoke;
         }
-        .par{
-            background-color: white;
+        
+        .tabela .corpo:hover{
+            background-color: lightgrey;
         }
+        
         td, th{
             border: 1px solid lightgrey;
-            padding-left: 10px;
+            padding: 8px;
         }
     </style>
 </head>
@@ -53,17 +51,17 @@
                 <th>Idade</th>
                 <th>Cidade</th>
             </tr>
-            <tr class="corpo impar">
+            <tr class="corpo">
                 <td>João</td>
                 <td>25</td>
                 <td>Rio de Janeiro</td>
             </tr>
-            <tr class="corpo par">
+            <tr class="corpo">
                 <TD>Natanael</TD>
                 <TD>30</TD>
                 <TD>São Paulo</TD>
             </tr>
-            <tr class="corpo impar">
+            <tr class="corpo">
                 <td>Fabiano</td>
                 <td>50</td>
                 <td>Niterói</td>
