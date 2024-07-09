@@ -4,10 +4,10 @@ nome = nome.capitalize() #Muda o primeiro caracter de uma string para maíusculo
 if (' ' in nome):
     nome=nome.title() #Funciona como o capitalize, mas para cada uma das palavras
     primeiro, sobrenome = nome.split(" ") #Separa a string em x pedaços (baseado na quantidade de variaveis) pelo caracter dentro da função (" ").
-    print("Olá,", primeiro, sobrenome, end=".\n")
+    print("Olá, %s %s" % (primeiro, sobrenome), end=".\n")
     print(f"Não me lembro de ter pedido mais de um nome.")
 else:
-    print("Olá,", nome, end=".\n")
+    print("Olá, %s" % (nome) , end=".\n")
     print(f"Que coincidência, eu conheço outro {nome}.")
 
 
