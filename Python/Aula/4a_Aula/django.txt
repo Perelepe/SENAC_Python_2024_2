@@ -1,0 +1,40 @@
+Para usar a Framework Django, são necessários:
+- VSCode (IDE para desenvolvimento);
+- Python (Linguagem);
+- Pip (Gerendiador de pacotes)
+- Virtual env (responsável por virtualizar um ambiente onde serão instaladas as dependências do projeto)
+- Django Framework
+
+virtualenv
+
+where virtualenv
+
+pip install virtualenv
+
+se não estiver no path, pega o caminho que ele indicar no aviso e:
+
+sistema -> sistema e segurança -> configurações avançadas do sistema -> variáveis de ambiente -> path -> editar -> novo -> cola o caminho :)
+
+pra ativar o env: 
+source env/bin/activate
+
+instalar o django:
+pip install Django==3.0.0
+
+iniciando o projeto:
+django-admin startproject *nome do projeto*
+^se não funcionar:
+pesquisa o erro na internet porra ---- brincadeira> pip install setuptools e ai tenta dnv.
+
+abrir o servidor:
+python manage.py runserver
+
+
+Arquivos do projeto do Django:
+Manage.py - utilitario para interagir com o projeto do Django                                               #MAIS UTILIZADO
+Pasta com nome do projeto - serve pra agrupar o pacote Python referente ao projeto (não mudar o nome disso!!)
+init.py - indica que essa pasta deve ser reconhecida e tratada como pacote
+settings.py - arquivo de configurações do projeto                                                           #MAIS UTILIZADO
+urls.py - Arquivo de urls do projeto. Para que uma url esteja acessível é preciso declará-la neste arquivo. #MAIS UTILIZADO
+wsgi.py - arquivo de integração para servidores web que implementam o padrão wsgi
+asgi.py - arquivo de integração para servidores web

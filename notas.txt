@@ -1,2 +1,0 @@
-Arquivo dedicado para a demonstração do git
-usando o VS Code
