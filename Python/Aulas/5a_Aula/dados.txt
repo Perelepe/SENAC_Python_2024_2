@@ -1,0 +1,39 @@
+método entidade-relacionamento...
+
+Um atributo participante de uma chave-primária não pode ser nulo.
+
+Se na tabela T1 tem uma chave estrangeira (FK) equivalente a chave primária (PK) de uma tabela T2, 
+todo valor T1.FK deve ser igual ao valor T2.PK ou nulo. Ou seja, não pode ser relacionado a um outro valor. Basicamente, é uma função sobrejetiva.
+
+Por exemplo:
+- Aluno
+    * Matricula; (PK)
+    * Nome;
+    * CPF;
+    * Data de Nascimento;
+    * E-Mail;
+    * Curso:Código; (FK) == PK do Curso
+
+- Curso
+    * Código; (PK)
+    * Nome;
+    * Descrição;
+    * Data de Criação;
+    * Data de Finalização;
+
+- Aluno exemplo:
+    * 1; (PK)
+    * Felipe;
+    * 1234;
+    * 04/05/2001;
+    * pipipi@gmail.com;
+    * 2; (FK) -> Significa que o aluno está relacionado ao curso que tem o código 2.
+
+- Curso exemplo;
+    * 2; (PK)
+    * Python;
+    * Formação em Python SENAC;
+    * 02/05/2023;
+    * NULL;
+
+Em uma chave primaria composta, caso apenas uma das partes da chave seja pesquisada, todas as relacionadas a essa parte aparecerão.
