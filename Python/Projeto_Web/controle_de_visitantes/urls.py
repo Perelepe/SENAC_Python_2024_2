@@ -1,9 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from index.views import index
+from usuarios.views import usuarios
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index, name="index")
+    path("usuarios", usuarios, name="usuarios")
 ]
-
