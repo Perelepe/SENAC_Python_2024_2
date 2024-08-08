@@ -1,0 +1,3 @@
+is_active -> indica se um usuário está atívo no sistama.
+is_staff -> indica se um usuário faz parte da equipe do projeto
+is_superuser -> indica se é administrador
