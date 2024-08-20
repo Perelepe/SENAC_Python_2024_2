@@ -89,7 +89,7 @@
             <a href="#">Sair</a>
         </div>
 
-        <h1>Página Inicial</h1>
+        <h1>{{ nome_pagina }}</h1>
 
         <div class="card-container">
             <div class="card">
@@ -123,14 +123,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Don Corleone</td>
-                    <td>123.456.789-10</td>
-                    <td>22 de agosto de 2079 às 15:30</td>
-                    <td>22 de agosto de 2079 às 15:38</td>
-                    <td>Darth Vader</td>
-                    <td><a href="#">Ver informações</a></td>
-                </tr>
+                {% for visitante in todos_visitantes %}
+                    <tr>
+                        <td>{{ visitante.nome_completo }}</td>
+                        <td>{{ visitante.cpf}}</td>
+                        <td>{{ visitante.hora_chegada }}</td>
+                        <td>{{ visitante.hora_autorizacao }}</td>
+                        <td>{{ visitante.nome_morador }}</td>
+                        <td><a href="#">Ver informações</a></td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
