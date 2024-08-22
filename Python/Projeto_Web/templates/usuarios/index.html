@@ -1,94 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Visitantes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fc;
-            color: #333;
-        }
-        .sidebar {
-            width: 200px;
-            height: 100vh;
-            background-color: #4e73df;
-            color: white;
-            padding-top: 20px;
-            position: fixed;
-        }
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .sidebar a:hover {
-            background-color: #2e59d9;
-        }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-        }
-        .navbar {
-            background-color: #ffffff;
-            padding: 15px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: flex-end;
-        }
-        .card-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .card {
-            background-color: white;
-            border-left: 4px solid #4e73df;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            margin: 10px;
-            width: calc(25% - 20px);
-            box-sizing: border-box;
-        }
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .table th, .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        .table th {
-            background-color: #4e73df;
-            color: white;
-        }
-        .footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #ffffff;
-            box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
     <div class="sidebar">
-        <a href="#">Controle de Visitantes</a>
-        <a href="#">Home</a>
+        <a href="#">Página Inicial</a>
+        <a href="http://127.0.0.1:8000/registrar-visitantes">Cadastro de Visitantes</a>
     </div>
 
     <div class="content">
-        <div class="navbar">
-            <a href="#">Sair</a>
-        </div>
-
         <h1>{{ nome_pagina }}</h1>
 
         <div class="card-container">

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Visitantes</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <a href="http://127.0.0.1:8000/">Página Inicial</a>
+            <a href="#">Cadastro de Visitantes</a>
+        </div>
+
+        <main class="main-content">
+            <h1>Cadastro de Visitantes</h1>
+            <form method="post">
+               
+                <label for="nome_completo">Nome Completo:</label>
+                <input type="text" id="nome_completo" name="nome_completo" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+                <label for="numero_casa">Número da Casa:</label>
+                <input type="text" id="numero_casa" name="numero_casa" required>
+
+                <label for="placa_veiculo">Placa do Veículo:</label>
+                <input type="text" id="placa_veiculo" name="placa_veiculo">
+
+                <label for="hora_chegada">Hora de Chegada:</label>
+                <input type="time" id="hora_chegada" name="hora_chegada" required>
+
+                <!--
+                <label for="hora_saida">Hora de Saída:</label>
+                <input type="time" id="hora_saida" name="hora_saida">
+                -->
+
+                <label for="hora_autorizacao">Hora de Autorização:</label>
+                <input type="time" id="hora_autorizacao" name="hora_autorizacao" required>
+
+                <label for="nome_morador">Nome do Morador:</label>
+                <input type="text" id="nome_morador" name="nome_morador" required>
+
+                <label for="porteiro_autorizou">Porteiro que Autorizou:</label>
+                <input type="text" id="porteiro_autorizou" name="porteiro_autorizou" required>
+
+                <button type="submit">Cadastrar Visitante</button>
+            </form>
+        </main>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; Django Framework</p>
+    </div>
+</body>
+</html>
