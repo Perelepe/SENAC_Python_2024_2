@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Visitantes</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="http://127.0.0.1:8000/">Página Inicial</a>
+        <a href="http://127.0.0.1:8000/registrar-visitantes">Cadastro de Visitantes</a>
+    </div>
+
+    {% block content %} 
+    {% endblock content %}
+
+    <div class="footer">
+        <p>Copyright &copy; Django Framework</p>
+    </div>
+</body>
+</html>

@@ -54,8 +54,8 @@ body {
 
 .table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
+    border-collapse: collapse;
 }
 
 .table th, .table td {
@@ -99,24 +99,6 @@ form {
     margin: 0;
     justify-self: left;
     border-left: 4px solid #004085;
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-form input[type="text"],
-form input[type="date"],
-form input[type="time"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
 form button {

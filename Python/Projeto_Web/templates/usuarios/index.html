@@ -1,69 +1,52 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Visitantes</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-</head>
-<body>
-    <div class="sidebar">
-        <a href="#">Página Inicial</a>
-        <a href="http://127.0.0.1:8000/registrar-visitantes">Cadastro de Visitantes</a>
-    </div>
+{% extends "base.html" %}
+{% block content %}
 
-    <div class="content">
-        <h1>{{ nome_pagina }}</h1>
+<div class="content">
+    <h1>{{ nome_pagina }}</h1>
 
-        <div class="card-container">
-            <div class="card">
-                <p>Visitantes aguardando autorização</p>
-                <h2>0</h2>
-            </div>
-            <div class="card">
-                <p>Visitantes no condomínio</p>
-                <h2>0</h2>
-            </div>
-            <div class="card">
-                <p>Visitas finalizadas</p>
-                <h2>0</h2>
-            </div>
-            <div class="card">
-                <p>Visitantes registrados no mês atual</p>
-                <h2>0</h2>
-            </div>
+    <div class="card-container">
+        <div class="card">
+            <p>Visitantes aguardando autorização</p>
+            <h2>0</h2>
         </div>
+        <div class="card">
+            <p>Visitantes no condomínio</p>
+            <h2>0</h2>
+        </div>
+        <div class="card">
+            <p>Visitas finalizadas</p>
+            <h2>0</h2>
+        </div>
+        <div class="card">
+            <p>Visitantes registrados no mês atual</p>
+            <h2>0</h2>
+        </div>
+    </div>
 
-        <h2>Visitantes recentes</h2>
-        <table class="table">
-            <thead>
+    <h2>Visitantes recentes</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome completo</th>
+                <th>CPF</th>
+                <th>Horário de chegada</th>
+                <th>Horário da autorização</th>
+                <th>Autorizado por</th>
+                <th>Mais informações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitante in todos_visitantes %}
                 <tr>
-                    <th>Nome completo</th>
-                    <th>CPF</th>
-                    <th>Horário de chegada</th>
-                    <th>Horário da autorização</th>
-                    <th>Autorizado por</th>
-                    <th>Mais informações</th>
+                    <td>{{ visitante.nome_completo }}</td>
+                    <td>{{ visitante.cpf}}</td>
+                    <td>{{ visitante.hora_chegada }}</td>
+                    <td>{{ visitante.hora_autorizacao }}</td>
+                    <td>{{ visitante.nome_morador }}</td>
+                    <td><a href="#">Ver informações</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for visitante in todos_visitantes %}
-                    <tr>
-                        <td>{{ visitante.nome_completo }}</td>
-                        <td>{{ visitante.cpf}}</td>
-                        <td>{{ visitante.hora_chegada }}</td>
-                        <td>{{ visitante.hora_autorizacao }}</td>
-                        <td>{{ visitante.nome_morador }}</td>
-                        <td><a href="#">Ver informações</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
-    <div class="footer">
-        <p>Copyright &copy; Django Framework</p>
-    </div>
-</body>
-</html>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

@@ -15,8 +15,10 @@ class Visitante(models.Model):
         auto_now=False,
         auto_now_add=False,
     )
-    numero_casa = models.PositiveSmallIntegerField(
-        verbose_name="Número da Casa",
+    numero_casa = models.CharField(
+        verbose_name="Número da Casa Visitada",
+        max_length=255,
+        blank=True,
     )
     placa_veiculo = models.CharField(
         verbose_name="Placa do Veículo",
