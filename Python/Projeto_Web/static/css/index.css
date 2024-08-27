@@ -101,6 +101,7 @@ form {
     border-left: 4px solid #004085;
 }
 
+
 form button {
     background-color: #004085;
     color: white;
@@ -109,12 +110,30 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left:532px;
 }
 
 form button:hover {
     background-color: #0056b3;
 }
 
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+form input, form select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.legenda{
+    color: #aaaaaa
+}
 .footer {
     text-align: center;
     padding: 15px;

@@ -18,7 +18,6 @@ class Visitante(models.Model):
     numero_casa = models.CharField(
         verbose_name="Número da Casa Visitada",
         max_length=255,
-        blank=True,
     )
     placa_veiculo = models.CharField(
         verbose_name="Placa do Veículo",
