@@ -11,3 +11,15 @@ class VisitanteForm(forms.ModelForm):
             "numero_casa",
             "placa_veiculo",
         )
+class AutorizaVisitanteForm(forms.ModelForm):
+    morador_responsavel = forms.CharField(required=True)
+    class Meta:
+        model = Visitante
+        fields = [
+            "morador_responsavel"
+        ]
+        error_messages = {
+            "morador_responsavel": {
+                "required": "Informe o morador responsável"
+            }
+        }

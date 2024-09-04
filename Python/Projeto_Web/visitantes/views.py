@@ -1,17 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from visitantes.forms import VisitanteForm
+from visitantes.forms import ( VisitanteForm, AutorizaVisitanteForm )
+from visitantes.models import Visitante
 
 def registrar_visitantes(request):
-    form = VisitanteForm()
+    form = AutorizaVisitanteForm()
 
     if request.method == "POST":
-        form = VisitanteForm(request.POST)
-
+        form = AutorizaVisitanteForm(request.POST, instance=visitante)
         if form.is_valid():
-            visitante = form.save(commit = False)
-            visitante.porteiro_autorizador = request.user.porteiro
-            visitante.save()
+            form.save()
+            messages.success(request, "Visitante autorizado com sucesso.")
             return redirect("index")
 
     context = {
@@ -19,3 +18,14 @@ def registrar_visitantes(request):
         "form":form,
     }
     return render(request, "visitantes/visitantes.html", context)
+
+def informacoes_visitante(request, id):
+    visitante = get_object_or_404(
+        Visitante,
+        id=id
+    )
+    context = {
+        "nome_pagina": "Informações do Visitante",
+        "visitante":visitante,
+        }
+    return render(request, "informacoes_visitante.html", context)

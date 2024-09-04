@@ -51,10 +51,19 @@ class Visitante(models.Model):
     porteiro_autorizador = models.ForeignKey(
         "porteiros.Porteiro",
         verbose_name="Porteiro que Autorizou a Entrada",
-        on_delete=models.PROTECT,
-      
+        on_delete=models.PROTECT, 
     )
-
+    STATUS_VISITANTE = [
+        ("AGUARDANDO", "Aguardando autorização"),
+        ("EM_VISITA", "Em visita"),
+        ("FINALIZADO", "Visita finalizada"),
+    ]
+    status = models.CharField(
+        verbose_name = "Status",
+        max_length = 10,
+        choices = STATUS_VISITANTE,
+        default="AGUARDANDO"
+    )
     class Meta:
         verbose_name = "Visitante"
         verbose_name_plural = "Visitantes"
@@ -62,3 +71,23 @@ class Visitante(models.Model):
     
     def __str__(self):
         return self.nome_completo
+    
+    def get_hora_saida(self):
+        if self.hora_saida:
+            return self.hora_saida
+        return "Horário de saída não registrado"
+    
+    def get_hora_autorizacao(self):
+        if self.hora_autorizacao:
+            return self.hora_autorizacao
+        return "Horário de Autorização não registrado"
+    
+    def get_nome_morador(self):
+        if self.nome_morador:
+            return self.nome_morador
+        return "Morador responsável pela autorização não registrado"
+    
+    def get_placa_veiculo(self):
+        if self.placa_veiculo:
+            return self.placa_veiculo
+        return "Horário de saída não registrado"
