@@ -3,15 +3,7 @@
 {% block content %}
 <div class="content">
     <h1>Informações do Visitante</h1>
-    <div>
-        <a href="#" class="btn btn-success btn-icon-split btn-sm" datatoggle="modal" data-target="#modal1">
-            <span class="text">Autorizar Entrada</span>
-
-            <span class="icon text-white-50">
-                <i class="fas fa-user-check"></i>
-            </span>
-        </a>
-    </div>
+    
 
     <div class="info">
         <p><strong>Nome:</strong> {{ visitante.nome_completo }}</p>
@@ -20,7 +12,6 @@
         <p><strong>Hora de Entrada:</strong> {{ visitante.hora_chegada }}</p>
         <p><strong>Hora de Saída:</strong> {{ visitante.hora_saida }}</p>
         <p><strong>Hora de Autorização:</strong> {{ visitante.hora_autorizacao }}</p>
-        <p><strong>Morador Autorizador:</strong> {{ visitante.nome_morador }}</p>
         <p><strong>Porteiro Responsável:</strong> {{ visitante.porteiro_autorizador }}</p>
         <p><strong>Status do Visitante:</strong> {{ visitante.get_status }}</p>
     </div>
@@ -30,22 +21,24 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Autorizar entrada de visitante</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
-                <div class="modal-body">
-                    <form method="post">
-                        {% csrf_token %}
+                <div class="modal-body">                    
+                    <form method="post" action="{% url 'informacoes_visitante' visitante.id %}">
                         <div class="form-group">
-                            <label for="id_nome_morador" class="col-form-label">Nome do morador responsável por
-                                autorizar a entrada do visitante:</label>
+                            <label for="id_nome_morador" class="col-form-label">Nome do morador responsável por autorizar a entrada do visitante:</label>
                             {{ visitante.nome_morador }}
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Autorizar entrada</button>
-                        </div>
+                        {% csrf_token %}
+                        
+                        <button type="submit" name="status" value="Finalizado" class="button">
+                            <a href="#">
+                                <span class="text">Autorizar Entrada</span>
+        
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-door-open"></i>
+                                </span>
+                            </a>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -53,38 +46,23 @@
     </div>
     <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Finalizar visita</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-body">
-                        <h5 class="mb-3">
-                            Realmente deseja encerrar a visita?
-                        </h5>
-                        <form method="post" action="{% url 'finalizar_visita' id=visitante.id %}">
-                            {% csrf_token %}
-                            <input hidden>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Finalizar visita</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="modal-dialog" role="document" style="margin-top: 10px;">
+            <form method="post" action="{% url 'informacoes_visitante' visitante.id %}">
+                <label>Deseja finalizar a visita?</label>
+                {% csrf_token %}
+                <button type="submit" name="status" value="Finalizado" class="button">
+                    <a href="#" class="button button-warning button-icon-split button-sm" data-toggle="modal" data-target="#modal2">
+                        <span class="text">Finalizar Visita</span>
+
+                        <span class="icon text-white-50">
+                            <i class="fas fa-door-open"></i>
+                        </span>
+                    </a>
+                </button>
+            </form>
         </div>
     </div>
-    <a href="#" class="btn btn-warning btn-icon-split btn-sm" data-toggle="modal" data-target="#modal2">
-        <span class="text">Finalizar Visita</span>
-        <span class="icon text-white-50">
-            <i class="fas fa-door-open"></i>
-        </span>
-    </a>
+    
 </div>
 
 {% endblock %}

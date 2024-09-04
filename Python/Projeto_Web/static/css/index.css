@@ -111,6 +111,7 @@ form button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-left:532px;
+    text-decoration: none;
 }
 
 form button:hover {
@@ -171,4 +172,8 @@ form input, form select{
 .visitor-details{
     margin-left: 200px;
     margin-top: 0px;
+}
+
+a{ 
+    text-decoration: none;
 }
