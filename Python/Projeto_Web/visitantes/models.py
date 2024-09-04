@@ -60,7 +60,7 @@ class Visitante(models.Model):
     ]
     status = models.CharField(
         verbose_name = "Status",
-        max_length = 10,
+        max_length = 20,
         choices = STATUS_VISITANTE,
         default="AGUARDANDO"
     )
@@ -91,3 +91,8 @@ class Visitante(models.Model):
         if self.placa_veiculo:
             return self.placa_veiculo
         return "Horário de saída não registrado"
+    
+    def get_status(self):
+        if self.status:
+            return self.status
+        return "Status não registrado"

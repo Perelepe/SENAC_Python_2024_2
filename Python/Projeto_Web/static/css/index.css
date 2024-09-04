@@ -142,3 +142,33 @@ form input, form select{
     margin-top: 20px;
     align-self: bottom;
 }
+
+
+.visitor-info {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.visitor-info p {
+    margin: 5px 0;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+.visitor-details{
+    margin-left: 200px;
+    margin-top: 0px;
+}

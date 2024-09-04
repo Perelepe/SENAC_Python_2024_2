@@ -43,7 +43,7 @@
                     <td>{{ visitante.hora_chegada }}</td>
                     <td>{{ visitante.hora_autorizacao }}</td>
                     <td>{{ visitante.nome_morador }}</td>
-                    <td><a href="#">Ver informações</a></td>
+                    <td><a href="{% url 'informacoes_visitante' id=visitante.id %}" class="btn">Ver informações</a></td>
                 </tr>
             {% endfor %}
         </tbody>
